@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ch2Ex1 The Basic Rectangle</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/ex2_formlogin.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/ex2_formlogin.js"></script> 
+  </head>
+  <body>
+    <div class="container">
+    <form>
+      <div class="row">
+        <label class="form__label" for="name">Username</label>
+        <input class="textbox__size" id="name" type="text">
+      </div>
+      <div class="row">
+        <label class="form__label" for="name">Password</label>
+        <input class="textbox__size" id="name" type="text">
+      </div>
+      <div class="row">
+        <label class="form__label" for="name">Email</label>
+        <input class="textbox__size" id="name" type="text">
+      </div>
+      <div class="row">
+        <label class="form__label" for="name">Birthday</label>
+        <input class="textbox__size js-textbox__birthday" id="name" type="text">
+        <img class="calendar__icon js-calendar__icon" src="images/calendar_icon.png" alt="" />
+      </div>
+        <button class="form__button" type="submit" value="Submit">Submit</button>
+        <button class="form__button" type="reset" value="Refresh">Refresh</button>
+    </form>
+    
+    
+      <table class="table__calendar js-table__calendar">
+        <thead>
+          <tr>
+            <th class="arrow arrow--bg__blue js-prev__year">&lt;&lt;</th>
+            <th class="arrow arrow--bg__blue js-prev__month">&lt;</th>
+            <th class="select__month cell--bg__blue" colspan="2">
+              <select class="js-select__month">
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+              </select>
+            </th>
+            <th class="cell--bg__blue">
+              <select class="select__year js-select__year">
+              </select>
+            </th>
+            <th class="arrow arrow--bg__blue js-next__month">&gt;</th>
+            <th class="arrow arrow--bg__blue js-next__year">&gt;&gt;</th>
+          </tr> 
+          <tr>
+            <th class="header__dayinweek">SUN</th>
+            <th class="header__dayinweek">MON</th>
+            <th class="header__dayinweek">TUE</th>
+            <th class="header__dayinweek">WED</th>
+            <th class="header__dayinweek">THU</th>
+            <th class="header__dayinweek">FRI</th>
+            <th class="header__dayinweek">SAT</th>
+          </tr>
+        </thead>
+        <tbody class="js-date">
+
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
