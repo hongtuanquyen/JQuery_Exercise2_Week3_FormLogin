@@ -130,7 +130,7 @@ $(document).ready(function() {
         alert(isDataValidated);
         $.ajax({
           url: "./check_dang_nhap.php",
-          method: "POST",
+          method: "GET",
           data: { username : submitData.username, pass : submitData.pass},
           success : function(response){
             if (response == "1") {
