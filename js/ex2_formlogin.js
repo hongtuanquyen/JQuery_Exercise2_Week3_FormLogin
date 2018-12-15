@@ -127,7 +127,7 @@ $(document).ready(function() {
       var submitData = getSubmitData();
       var isDataValidated = validateSubmitData(submitData);
       if(isDataValidated) { 
-        alert(isDataValidated);
+        alert(submitData.username + " " + submitData.pass);
         $.ajax({
           url: "./check_dang_nhap.php",
           method: "GET",
