@@ -14,7 +14,8 @@ $(document).ready(function() {
   $(".js-prev__year").on("click", moveToPreviousYear);
   $(".js-next__year").on("click", moveToNextYear);
   $(".js-date").on("click",".js-cell__days", getDateData);
-  $(".js-form__submit").on( "submit", submitUserData );
+  // $(".js-form__submit").on( "submit", submitUserData );
+  $(".js-form__submit").on("click",".js-button__submit", submitUserData);
   
   function updateCalendarData(month, year, today) {    
       var firstDay = (new Date(year, month)).getDay();
@@ -124,10 +125,21 @@ $(document).ready(function() {
   
   function submitUserData(event) {
       var submitData = getSubmitData();
-
       var isDataValidated = validateSubmitData(submitData);
-      if(isDataValidated) {
-
+      if(isDataValidated) { 
+        alert(isDataValidated);
+        $.ajax({
+          url: "./check_dang_nhap.php",
+          method: "POST",
+          data: { username : submitData.username, pass : submitData.pass},
+          success : function(response){
+            if (response == "1") {
+              alert("Đăng nhập thành công");
+            }else{
+              alert("Tên đăng nhập hoặc mật khẩu không chính xác !");
+            }
+          }
+        });
       }
       else {
           event.preventDefault();
@@ -144,6 +156,10 @@ $(document).ready(function() {
   }
   
   function validateSubmitData(submitData) {
+      var errUsername;
+      var errPassword;
+      var errEmail;
+      var errBirthday;
       // Delete space at the head and tail of the data 
       submitData.username =  $.trim(submitData.username);
       submitData.pass =  $.trim(submitData.pass);
@@ -155,15 +171,20 @@ $(document).ready(function() {
       $(".js-error__email").empty();
       $(".js-error__birthday").empty(); 
 
-      var errUsername = ValidateUsername(submitData);
-      var errPassword = ValidatePass(submitData);
-      var errEmail = ValidateEmail(submitData);
-      var errBirthday = ValidateBirthday(submitData);
+      errUsername = ValidateUsername(submitData);
+      console.log(errUsername);
+      errPassword = ValidatePass(submitData);
+      errEmail = ValidateEmail(submitData);
+      errBirthday = ValidateBirthday(submitData);
       $(".js-error__username").html(errList[errUsername]);
       $(".js-error__password").html(errList[errPassword]);
       $(".js-error__email").html(errList[errEmail]);
       $(".js-error__birthday").html(errList[errBirthday]);
       
+       if(errUsername != undefined || errPassword != undefined || errEmail != undefined || errBirthday != undefined) {
+          return false;
+       }
+       return true;
 
   }
 
@@ -217,7 +238,7 @@ $(document).ready(function() {
   
   function isRightEmailFormat(submitData) {
       var emailFormat = new RegExp("^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$");
-      console.log(emailFormat.test(submitData.email));
+      //console.log(emailFormat.test(submitData.email));
       if(!emailFormat.test(submitData.email)) return false;
       return true;
   }
