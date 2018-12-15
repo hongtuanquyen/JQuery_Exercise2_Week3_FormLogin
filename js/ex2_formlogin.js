@@ -133,11 +133,12 @@ $(document).ready(function() {
           method: "GET",
           data: { username : submitData.username, pass : submitData.pass},
           success : function(response){
-            if (response == "1") {
-              alert("Đăng nhập thành công");
-            }else{
-              alert("Tên đăng nhập hoặc mật khẩu không chính xác !");
-            }
+            alert(response);
+            // if (response == "1") {
+              // alert("Đăng nhập thành công");
+            // }else{
+              // alert("Tên đăng nhập hoặc mật khẩu không chính xác !");
+            // }
           }
         });
       }
