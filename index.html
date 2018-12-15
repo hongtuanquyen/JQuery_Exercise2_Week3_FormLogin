@@ -10,71 +10,75 @@
   </head>
   <body>
     <div class="container">
-    <form>
-      <div class="row">
-        <label class="form__label" for="name">Username</label>
-        <input class="textbox__size" id="name" type="text">
-      </div>
-      <div class="row">
-        <label class="form__label" for="name">Password</label>
-        <input class="textbox__size" id="name" type="text">
-      </div>
-      <div class="row">
-        <label class="form__label" for="name">Email</label>
-        <input class="textbox__size" id="name" type="text">
-      </div>
-      <div class="row">
-        <label class="form__label" for="name">Birthday</label>
-        <input class="textbox__size js-textbox__birthday" id="name" type="text">
-        <img class="calendar__icon js-calendar__icon" src="images/calendar_icon.png" alt="" />
-      </div>
-        <button class="form__button" type="submit" value="Submit">Submit</button>
-        <button class="form__button" type="reset" value="Refresh">Refresh</button>
-    </form>
-    
-    
-      <table class="table__calendar js-table__calendar">
-        <thead>
-          <tr>
-            <th class="arrow arrow--bg__blue js-prev__year">&lt;&lt;</th>
-            <th class="arrow arrow--bg__blue js-prev__month">&lt;</th>
-            <th class="select__month cell--bg__blue" colspan="2">
-              <select class="js-select__month">
-                <option value="0">January</option>
-                <option value="1">February</option>
-                <option value="2">March</option>
-                <option value="3">April</option>
-                <option value="4">May</option>
-                <option value="5">June</option>
-                <option value="6">July</option>
-                <option value="7">August</option>
-                <option value="8">September</option>
-                <option value="9">October</option>
-                <option value="10">November</option>
-                <option value="11">December</option>
-              </select>
-            </th>
-            <th class="cell--bg__blue">
-              <select class="select__year js-select__year">
-              </select>
-            </th>
-            <th class="arrow arrow--bg__blue js-next__month">&gt;</th>
-            <th class="arrow arrow--bg__blue js-next__year">&gt;&gt;</th>
-          </tr> 
-          <tr>
-            <th class="header__dayinweek">SUN</th>
-            <th class="header__dayinweek">MON</th>
-            <th class="header__dayinweek">TUE</th>
-            <th class="header__dayinweek">WED</th>
-            <th class="header__dayinweek">THU</th>
-            <th class="header__dayinweek">FRI</th>
-            <th class="header__dayinweek">SAT</th>
-          </tr>
-        </thead>
-        <tbody class="js-date">
+      <form class="js-form__submit">
+        <div class="row">
+          <label class="form__label" for="username">Username</label>
+          <input class="textbox__size" id="js-username" type="text">
+          <p class="error js-error__username">a</p>
+        </div>
+        <div class="row">
+          <label class="form__label" for="password">Password</label>
+          <input class="textbox__size" id="js-password" type="text">
+          <p class="error js-error__password">a</p>
+        </div>
+        <div class="row">
+          <label class="form__label" for="email">Email</label>
+          <input class="textbox__size" id="js-email" type="text">
+          <p class="error js-error__email">a</p>   
+        </div>
+        <div class="row">
+          <label class="form__label" for="birthday">Birthday</label>
+          <input class="textbox__size js-textbox__birthday" id="js-birthday" type="text">
+          <img class="calendar__icon js-calendar__icon" src="images/calendar_icon.png" alt="" />
+          <p class="error js-error__birthday">a</p>  
+        </div>
+        <div class="row__button">
+          <button class="form__button js-button__submit" type="submit">SUBMIT</button>
+          <button class="form__button js-button__refresh" type="reset" value="Refresh">REFRESH</button>
+        </div>
+        <table class="table__calendar js-table__calendar">
+            <thead>
+              <tr>
+                <th class="header__arrow header__arrow--bg__blue js-prev__year">&lt;&lt;</th>
+                <th class="header__arrow header__arrow--bg__blue js-prev__month">&lt;</th>
+                <th class="select__month cell--bg__blue" colspan="2">
+                  <select class="js-select__month">
+                    <option value="0">January</option>
+                    <option value="1">February</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                  </select>
+                </th>
+                <th class="cell--bg__blue">
+                  <select class="select__year js-select__year">
+                  </select>
+                </th>
+                <th class="header__arrow header__arrow--bg__blue js-next__month">&gt;</th>
+                <th class="header__arrow header__arrow--bg__blue js-next__year">&gt;&gt;</th>
+              </tr> 
+              <tr>
+                <th class="header__dayinweek">Sun</th>
+                <th class="header__dayinweek">Mon</th>
+                <th class="header__dayinweek">Tue</th>
+                <th class="header__dayinweek">Wed</th>
+                <th class="header__dayinweek">Thu</th>
+                <th class="header__dayinweek">Fri</th>
+                <th class="header__dayinweek">Sat</th>
+              </tr>
+            </thead>
+            <tbody class="js-date">
 
-        </tbody>
+            </tbody>
       </table>
+      </form>
     </div>
   </body>
 </html>
