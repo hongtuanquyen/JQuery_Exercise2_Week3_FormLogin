@@ -54,7 +54,7 @@ $(document).ready(function() {
 
   function init() {
       var dateStr = today.getDate() + "/" + (currentMonth + 1) + "/" + currentYear;
-      for(var i = (currentYear - lowerLimit); i <= currentYear; i++) {
+      for(var i = (currentYear - lowerLimit); i <= (currentYear + upperLimit); i++) {
           if(i === currentYear)
               $(".js-select__year").append("<option selected>" + i + "</option>"); 
           else
@@ -73,7 +73,7 @@ $(document).ready(function() {
   }
 
   function moveToNextMonth() {     
-      if(currentYear === today.getFullYear() && currentMonth === 11) 
+      if(currentYear === (today.getFullYear() + upperLimit) && currentMonth === 11) 
         return; 
       currentYear = (currentMonth === 11) ? (currentYear + 1) : currentYear;
       currentMonth = (currentMonth === 11) ? 0 : (currentMonth + 1); 
@@ -98,7 +98,7 @@ $(document).ready(function() {
   }
   
   function moveToNextYear() {
-      if(currentYear === today.getFullYear())
+      if(currentYear === (today.getFullYear() + upperLimit))
         return;
       currentYear++;
       updateCalendarData(currentMonth, currentYear, today);    
@@ -225,7 +225,8 @@ $(document).ready(function() {
   var today = new Date();
   var currentMonth = today.getMonth(); // plus 1 to have an exact current month
   var currentYear = today.getFullYear();
-  var lowerLimit = 120;
+  var lowerLimit = 100;
+  var upperLimit = 100;
   var isCalendarShowing = true;
   var errList = {
     errBlank  : "Can not be left blank.",
