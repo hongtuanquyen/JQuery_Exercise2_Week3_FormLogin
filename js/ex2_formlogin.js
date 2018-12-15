@@ -164,7 +164,6 @@ $(document).ready(function() {
       $(".js-error__email").html(errList[errEmail]);
       $(".js-error__birthday").html(errList[errBirthday]);
       
-      console.log(errUsername);
 
   }
 
@@ -199,8 +198,11 @@ $(document).ready(function() {
       } 
       else if(submitData.email.length < 8) {
           return "errMin"
-      }       
+      }
+      else if(!isRightEmailFormat(submitData))
+         return "errEmail";
   }
+  
   function ValidateBirthday(submitData) {
       if(submitData.birthday.length <= 0) {
           return "errBlank";
@@ -213,15 +215,23 @@ $(document).ready(function() {
       }       
   }
   
+  function isRightEmailFormat(submitData) {
+      var emailFormat = new RegExp("^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$");
+      console.log(emailFormat.test(submitData.email));
+      if(!emailFormat.test(submitData.email)) return false;
+      return true;
+  }
+  
   var today = new Date();
   var currentMonth = today.getMonth(); // plus 1 to have an exact current month
   var currentYear = today.getFullYear();
   var lowerLimit = 120;
   var isCalendarShowing = true;
   var errList = {
-    errBlank : "Can not be left blank.",
+    errBlank  : "Can not be left blank.",
     errSpace  : "Can not have space.",
-    errMin   : "The number of character is at least 8."
+    errMin    : "The number of character is at least 8.",
+    errEmail  : "Wrong email format"
   }
   
   updateCalendarData(currentMonth, currentYear, today);
