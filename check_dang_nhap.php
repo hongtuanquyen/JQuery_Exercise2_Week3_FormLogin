@@ -98,10 +98,10 @@
     $email = trim($email);
     $birthday = trim($birthday);
 
-    $server_username = "root";
-    $server_password = "";
-    $server_host = "localhost";
-    $database = 'quyen';
+    $server_username = "0fe_23157668";
+    $server_password = "bidanh1012";
+    $server_host = "sql311.0fees.us";
+    $database = '0fe_23157668_quyen';
     
     // Validate user data
     $usernameErr = validateUsername($username);
