@@ -4,7 +4,7 @@
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
-  font-family:  "Times New Roman",Georgia, Times, serif;
+  font-family: "Times New Roman",Georgia, Times, serif;
 }
 
 th, td {
@@ -76,14 +76,14 @@ form {
 }
 
 .textbox__size{
-	width:292px;
-	height:22px;
+	width: 292px;
+	height: 22px;
 }
 
 .form__label {
-	margin-right:7px;
+	margin-right: 7px;
   width: 70px;
-	line-height:10px;
+	line-height: 10px;
   font-weight: bold;
 }
 

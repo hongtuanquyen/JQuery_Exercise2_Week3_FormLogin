@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Ch2Ex1 The Basic Rectangle</title>
+    <title>Exercise 2 Week 3 JS</title>
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
     <link rel="stylesheet" type="text/css" href="styles/ex2_formlogin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -13,23 +13,23 @@
     <div class="container">
       <form class="js-form__submit">
         <div class="row">
-          <label class="form__label" for="username">Username</label>
-          <input class="textbox__size" id="js-username" type="text">
+          <label class="form__label">Username</label>
+          <input class="textbox__size" id="js-username" type="text" placeholder="Input your username">
           <p class="error js-error__username"></p>
         </div>
         <div class="row">
           <label class="form__label" for="password">Password</label>
-          <input class="textbox__size" id="js-password" type="text">
+          <input class="textbox__size" id="js-password" type="password" placeholder="Input your password">
           <p class="error js-error__password"></p>
         </div>
         <div class="row">
           <label class="form__label" for="email">Email</label>
-          <input class="textbox__size" id="js-email" type="text">
+          <input class="textbox__size" id="js-email" type="text" placeholder="Input your email here">
           <p class="error js-error__email"></p>   
         </div>
         <div class="row">
           <label class="form__label" for="birthday">Birthday</label>
-          <input class="textbox__size js-textbox__birthday" id="js-birthday" type="text">
+          <input class="textbox__size js-textbox__birthday" id="js-birthday" type="text" placeholder="Input your email here">
           <img class="calendar__icon js-calendar__icon" src="images/calendar_icon.png" alt="" />
           <p class="error js-error__birthday"></p>  
         </div>
@@ -38,46 +38,46 @@
           <button class="form__button js-button__refresh" type="reset" value="Refresh">REFRESH</button>
         </div>
         <table class="table__calendar js-table__calendar">
-            <thead>
-              <tr>
-                <th class="header__arrow header__arrow--bg__blue js-prev__year">&lt;&lt;</th>
-                <th class="header__arrow header__arrow--bg__blue js-prev__month">&lt;</th>
-                <th class="select__month cell--bg__blue" colspan="2">
-                  <select class="js-select__month">
-                    <option value="0">January</option>
-                    <option value="1">February</option>
-                    <option value="2">March</option>
-                    <option value="3">April</option>
-                    <option value="4">May</option>
-                    <option value="5">June</option>
-                    <option value="6">July</option>
-                    <option value="7">August</option>
-                    <option value="8">September</option>
-                    <option value="9">October</option>
-                    <option value="10">November</option>
-                    <option value="11">December</option>
-                  </select>
-                </th>
-                <th class="cell--bg__blue">
-                  <select class="select__year js-select__year">
-                  </select>
-                </th>
-                <th class="header__arrow header__arrow--bg__blue js-next__month">&gt;</th>
-                <th class="header__arrow header__arrow--bg__blue js-next__year">&gt;&gt;</th>
-              </tr> 
-              <tr>
-                <th class="header__dayinweek">Sun</th>
-                <th class="header__dayinweek">Mon</th>
-                <th class="header__dayinweek">Tue</th>
-                <th class="header__dayinweek">Wed</th>
-                <th class="header__dayinweek">Thu</th>
-                <th class="header__dayinweek">Fri</th>
-                <th class="header__dayinweek">Sat</th>
-              </tr>
-            </thead>
-            <tbody class="js-date">
+          <thead>
+            <tr>
+              <th class="header__arrow header__arrow--bg__blue js-prev__year">&lt;&lt;</th>
+              <th class="header__arrow header__arrow--bg__blue js-prev__month">&lt;</th>
+              <th class="select__month cell--bg__blue" colspan="2">
+                <select class="js-select__month">
+                  <option value="0">January</option>
+                  <option value="1">February</option>
+                  <option value="2">March</option>
+                  <option value="3">April</option>
+                  <option value="4">May</option>
+                  <option value="5">June</option>
+                  <option value="6">July</option>
+                  <option value="7">August</option>
+                  <option value="8">September</option>
+                  <option value="9">October</option>
+                  <option value="10">November</option>
+                  <option value="11">December</option>
+                </select>
+              </th>
+              <th class="cell--bg__blue">
+                <select class="select__year js-select__year">
+                </select>
+              </th>
+              <th class="header__arrow header__arrow--bg__blue js-next__month">&gt;</th>
+              <th class="header__arrow header__arrow--bg__blue js-next__year">&gt;&gt;</th>
+            </tr> 
+            <tr>
+              <th class="header__dayinweek">Sun</th>
+              <th class="header__dayinweek">Mon</th>
+              <th class="header__dayinweek">Tue</th>
+              <th class="header__dayinweek">Wed</th>
+              <th class="header__dayinweek">Thu</th>
+              <th class="header__dayinweek">Fri</th>
+              <th class="header__dayinweek">Sat</th>
+            </tr>
+          </thead>
+          <tbody class="js-date">
 
-            </tbody>
+          </tbody>
       </table>
       </form>
     </div>
