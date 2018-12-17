@@ -71,7 +71,7 @@ $(document).ready(function() {
                 $(".js-select__year").append("<option>" + i + "</option>"); 
         }
         $(".js-select__month").val(currentMonth);
-        $(".js-textbox__birthday").val(dateStr);
+        $(".js-birthday").val(dateStr);
         updateCalendarData(currentMonth, currentYear, today);
     }
 
@@ -154,7 +154,7 @@ $(document).ready(function() {
         var dateStr = $(this).html() + "/" + (currentMonth + 1) + "/" + currentYear;
         $(".js-table__calendar").hide();
         isCalendarShowing = true;
-        $(".js-textbox__birthday").empty().val(dateStr);
+        $(".js-birthday").empty().val(dateStr);
     }
 
     /*
@@ -221,10 +221,10 @@ $(document).ready(function() {
       @return: submitData
     */       
     function getSubmitData() {
-        var username = $("#js-username").val();
-        var pass = $("#js-password").val();
-        var email = $("#js-email").val();
-        var birthday = $("#js-birthday").val();
+        var username = $(".js-username").val();
+        var pass = $(".js-password").val();
+        var email = $(".js-email").val();
+        var birthday = $(".js-birthday").val();
         var submitData = new SubmitData(username, pass, email, birthday);
         return submitData;
     }
