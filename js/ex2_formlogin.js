@@ -182,7 +182,6 @@ $(document).ready(function() {
         var submitData = getSubmitData();
         var isDataValidated = validateSubmitData(submitData);
         if(isDataValidated) { 
-            alert(submitData.username + " " + submitData.pass);
             $.ajax({
                 url: "./check_dang_nhap.php",
                 method: "GET",
@@ -194,7 +193,6 @@ $(document).ready(function() {
                 },
                 dataType: "json",  
                 success : function(response) { 
-                    alert(response.js_arr); 
                     var js_arr = response.js_arr;
                     if(js_arr[0] === false) {
                         alert("Submit failed");
@@ -206,6 +204,10 @@ $(document).ready(function() {
                     }
                     else {
                         alert("Submit succeeded");
+                        $(".js-username").val('');
+                        $(".js-password").val('');
+                        $(".js-email").val('');
+                        $(".js-birthday").val('');
                     }
                 }
             });
